@@ -1,0 +1,70 @@
+.app-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  align-content: stretch;
+}
+
+.selections {
+  width: 50%;
+  padding: 2em;
+  min-height: 100vh;
+}
+
+.advice-section {
+  background: linear-gradient(0deg, #f27a7d, #f7d486, #c5f9d7);
+  background-size: 400% 400%;
+  -webkit-animation: GradientAnimation 15s ease infinite;
+  -moz-animation: GradientAnimation 15s ease infinite;
+  animation: GradientAnimation 15s ease infinite;
+}
+
+.compliment-section {
+  background: linear-gradient(0deg, #c5f9d7, #f7d486, #f27a7d);
+  background-size: 400% 400%;
+  -webkit-animation: GradientAnimation 15s ease infinite;
+  -moz-animation: GradientAnimation 15s ease infinite;
+  animation: GradientAnimation 15s ease infinite;
+}
+
+@media screen and (max-width: 600px) {
+  .selections {
+    width: auto;
+    min-height: 200px;
+  }
+}
+
+@-webkit-keyframes GradientAnimation {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+@-moz-keyframes GradientAnimation {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+@keyframes GradientAnimation {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}

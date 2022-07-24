@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { getCompliments, getAdvice } from "./ApiCalls";
 import "./App.css";
 import { Button } from "./components/Button/Button";
+import { Container } from "./components/Container/Container";
 
 interface Props {}
 interface State {
@@ -31,16 +32,10 @@ class App extends Component<Props, State> {
           <h1 className="logo">PickMeUp</h1>
           <Button label="See Favorites" />
         </nav>
-        <div className="app-container">
-          <div className="selections compliment-section">
-            <h2>{this.state.compliment}</h2>
-            <Button label="Get Compliment" />
-          </div>
-          <div className="selections advice-section">
-            <h2>{this.state.advice}</h2>
-            <Button label="Get Advice" />
-          </div>
-        </div>
+        <Container
+          advice={this.state.advice}
+          compliment={this.state.compliment}
+        />
       </main>
     );
   }
