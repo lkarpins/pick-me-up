@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { getCompliments, getAdvice } from "./ApiCalls";
+import "./App.css";
 
 interface Props {}
 interface State {
@@ -26,8 +27,14 @@ class App extends Component<Props, State> {
     return (
       <main className="App">
         <h1>Pick-Me-Up</h1>
-        <h2>{this.state.compliment}</h2>
-        <h2>{this.state.advice}</h2>
+        <div className="app-container">
+          <div className="selections compliment-section">
+            <h2>{this.state.compliment}</h2>
+          </div>
+          <div className="selections advice-section">
+            <h2>{this.state.advice}</h2>
+          </div>
+        </div>
       </main>
     );
   }
