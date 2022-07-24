@@ -20,6 +20,7 @@ h2 {
   font-family: "Righteous", cursive;
 }
 
-p {
+p,
+button {
   font-family: "Montserrat", sans-serif;
 }

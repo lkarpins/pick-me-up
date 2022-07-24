@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { getCompliments, getAdvice } from "./ApiCalls";
 import "./App.css";
+import { Button } from "./components/Button/Button";
 
 interface Props {}
 interface State {
@@ -28,16 +29,16 @@ class App extends Component<Props, State> {
       <main className="App">
         <nav>
           <h1 className="logo">PickMeUp</h1>
-          <button>See Favorites</button>
+          <Button label="See Favorites" />
         </nav>
         <div className="app-container">
           <div className="selections compliment-section">
             <h2>{this.state.compliment}</h2>
-            <button>Click for Compliment</button>
+            <Button label="Get Compliment" />
           </div>
           <div className="selections advice-section">
             <h2>{this.state.advice}</h2>
-            <button>Click for Advice</button>
+            <Button label="Get Advice" />
           </div>
         </div>
       </main>
