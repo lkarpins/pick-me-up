@@ -1,26 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { getCompliments, getAdvice } from "./ApiCalls";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface Props {}
+interface State {
+  compliment: string;
+  advice: string;
+}
+
+class App extends Component<Props, State> {
+  state: State = {
+    compliment: "",
+    advice: "",
+  };
+
+  componentDidMount() {
+    getCompliments().then((json) => {
+      this.setState({ compliment: json.compliment });
+    });
+    getAdvice().then((json) => {
+      console.log("advice", json);
+      this.setState({ advice: json.slip.advice });
+    });
+  }
+
+  render() {
+    console.log("state", this.state);
+    return (
+      <main className="App">
+        <h1>Pick-Me-Up</h1>
+        <h2>{this.state.compliment}</h2>
+        <h2>{this.state.advice}</h2>
+      </main>
+    );
+  }
 }
 
 export default App;
