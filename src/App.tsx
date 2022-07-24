@@ -18,13 +18,11 @@ class App extends Component<Props, State> {
       this.setState({ compliment: json.compliment });
     });
     getAdvice().then((json) => {
-      console.log("advice", json);
       this.setState({ advice: json.slip.advice });
     });
   }
 
   render() {
-    console.log("state", this.state);
     return (
       <main className="App">
         <h1>Pick-Me-Up</h1>
