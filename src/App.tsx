@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getCompliments, getAdvice } from "./ApiCalls";
 import "./App.css";
 import { Button } from "./components/Button/Button";
-import { Container } from "./components/Container/Container";
+import { AppContainer } from "./components/AppContainer/AppContainer";
 
 interface Props {}
 interface State {
@@ -32,10 +32,7 @@ class App extends Component<Props, State> {
           <h1 className="logo">PickMeUp</h1>
           <Button label="See Favorites" />
         </nav>
-        <Container
-          advice={this.state.advice}
-          compliment={this.state.compliment}
-        />
+        <AppContainer />
       </main>
     );
   }
