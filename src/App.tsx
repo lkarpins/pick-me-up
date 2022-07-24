@@ -26,13 +26,18 @@ class App extends Component<Props, State> {
   render() {
     return (
       <main className="App">
-        <h1>Pick-Me-Up</h1>
+        <nav>
+          <h1 className="logo">PickMeUp</h1>
+          <button>See Favorites</button>
+        </nav>
         <div className="app-container">
           <div className="selections compliment-section">
             <h2>{this.state.compliment}</h2>
+            <button>Click for Compliment</button>
           </div>
           <div className="selections advice-section">
             <h2>{this.state.advice}</h2>
+            <button>Click for Advice</button>
           </div>
         </div>
       </main>
