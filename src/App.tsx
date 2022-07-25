@@ -4,6 +4,7 @@ import "./App.css";
 import { Button } from "./components/Button/Button";
 import { AppContainer } from "./components/AppContainer/AppContainer";
 import { ComplimentContainer } from "./components/ComplimentContainer/ComplimentContainer";
+import { AdviceContainer } from "./components/AdviceContainer/AdviceContainer";
 
 interface Props {}
 interface State {
@@ -35,6 +36,7 @@ class App extends Component<Props, State> {
         </nav>
         {/* <AppContainer /> */}
         <ComplimentContainer compliment={this.state.compliment}/>
+        <AdviceContainer advice={this.state.advice}/>
       </main>
     );
   }
