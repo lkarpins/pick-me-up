@@ -3,6 +3,7 @@ import { getCompliments, getAdvice } from "./ApiCalls";
 import "./App.css";
 import { Button } from "./components/Button/Button";
 import { AppContainer } from "./components/AppContainer/AppContainer";
+import { ComplimentContainer } from "./components/ComplimentContainer/ComplimentContainer";
 
 interface Props {}
 interface State {
@@ -32,7 +33,8 @@ class App extends Component<Props, State> {
           <h1 className="logo">PickMeUp</h1>
           <Button label="See Favorites" />
         </nav>
-        <AppContainer />
+        {/* <AppContainer /> */}
+        <ComplimentContainer compliment={this.state.compliment}/>
       </main>
     );
   }
