@@ -5,8 +5,10 @@ import { Button } from "./components/Button/Button";
 import { AppContainer } from "./components/AppContainer/AppContainer";
 import { ComplimentContainer } from "./components/ComplimentContainer/ComplimentContainer";
 import { AdviceContainer } from "./components/AdviceContainer/AdviceContainer";
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 
-interface Props {}
+
+interface Props { }
 interface State {
   compliment: string;
   advice: string;
@@ -34,9 +36,19 @@ class App extends Component<Props, State> {
           <h1 className="logo">PickMeUp</h1>
           <Button label="See Favorites" />
         </nav>
-        {/* <AppContainer /> */}
-        <ComplimentContainer compliment={this.state.compliment}/>
-        <AdviceContainer advice={this.state.advice}/>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path="/">
+              <AppContainer />
+            </Route> 
+            <Route exact path="/complimentcontainer">
+              <ComplimentContainer compliment={this.state.compliment}/>
+            </Route>
+            <Route exact path="/advicecontainer">
+              <AdviceContainer advice={this.state.advice}/>
+            </Route>
+          </Switch>
+        </BrowserRouter>
       </main>
     );
   }
