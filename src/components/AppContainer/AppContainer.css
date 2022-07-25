@@ -1,0 +1,13 @@
+.app-container {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  align-content: stretch;
+}
+
+@media screen and (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+}

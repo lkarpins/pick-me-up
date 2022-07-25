@@ -1,0 +1,9 @@
+.app-button {
+  border: 0.125rem solid #ffffff;
+  padding: 0.5rem;
+  background-color: #103783;
+  color: #ffffff;
+  font-weight: 700;
+  width: 13rem;
+  text-transform: uppercase;
+}
