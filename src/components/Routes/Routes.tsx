@@ -15,15 +15,15 @@ export const Routes = ({
 }: RoutesProps) => {
     return (
         <Switch>
-        <Route exact path="/">
-          <AppContainer />
-        </Route>
-        <Route exact path="/compliment">
-          <ComplimentContainer compliment={compliment} />
-        </Route>
-        <Route exact path="/advice">
-          <AdviceContainer advice={advice} />
-        </Route>
-      </Switch>
+            <Route exact path="/">
+                <AppContainer />
+            </Route>
+            <Route exact path="/compliment">
+                <ComplimentContainer compliment={compliment} />
+            </Route>
+            <Route exact path="/advice">
+                <AdviceContainer advice={advice} />
+            </Route>
+        </Switch>
     );
 }

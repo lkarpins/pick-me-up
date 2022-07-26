@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { getCompliments, getAdvice } from "./ApiCalls";
 import "./App.css";
-import { Button } from "./components/Button/Button";
+import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
+
 
 
 
@@ -34,10 +35,7 @@ class App extends Component<Props, State> {
   render() {
     return (
       <main className="App">
-        <nav>
-          <h1 className="logo">PickMeUp</h1>
-          <Button label="See Favorites" />
-        </nav>
+        <Navigation label="See Favorites" />
         <Routes compliment={this.state.compliment} advice={this.state.advice} />
       </main>
     );
