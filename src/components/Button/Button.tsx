@@ -5,6 +5,6 @@ export interface ButtonProps {
   label: string;
 }
 
-export function Button({ label }: ButtonProps) {
+export const Button = ({ label }: ButtonProps) => {
   return <button className="app-button">{label}</button>;
 }
