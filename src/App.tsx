@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { getCompliments, getAdvice } from "./ApiCalls";
-import "./App.css";
 import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
 
