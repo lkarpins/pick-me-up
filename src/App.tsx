@@ -1,20 +1,26 @@
 import React, { Component } from "react";
 import { getCompliments, getAdvice } from "./ApiCalls";
-import "./App.css";
-import { Button } from "./components/Button/Button";
-import { AppContainer } from "./components/AppContainer/AppContainer";
+import { Navigation } from "./components/Navigation/Navigation";
+import { Routes } from "./components/Routes/Routes";
 
-interface Props {}
+
+
+
+
+interface Props { }
 interface State {
   compliment: string;
   advice: string;
 }
 
 class App extends Component<Props, State> {
-  state: State = {
-    compliment: "",
-    advice: "",
-  };
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      compliment: "",
+      advice: "",
+    };
+  }
 
   componentDidMount() {
     getCompliments().then((json) => {
@@ -28,11 +34,8 @@ class App extends Component<Props, State> {
   render() {
     return (
       <main className="App">
-        <nav>
-          <h1 className="logo">PickMeUp</h1>
-          <Button label="See Favorites" />
-        </nav>
-        <AppContainer />
+        <Navigation label="See Favorites" />
+        <Routes compliment={this.state.compliment} advice={this.state.advice} />
       </main>
     );
   }
