@@ -5,7 +5,7 @@ import { Button } from "./components/Button/Button";
 import { AppContainer } from "./components/AppContainer/AppContainer";
 import { ComplimentContainer } from "./components/ComplimentContainer/ComplimentContainer";
 import { AdviceContainer } from "./components/AdviceContainer/AdviceContainer";
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 
 interface Props { }
