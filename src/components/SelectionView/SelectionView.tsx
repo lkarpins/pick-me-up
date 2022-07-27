@@ -4,12 +4,12 @@ import "./SelectionView.css";
 
 export interface SelectionViewProps {
   selection: string;
-  selectionViewHeading: string;
+  selectionViewText: string;
 }
 
 export const SelectionView = ({
   selection,
-  selectionViewHeading,
+  selectionViewText,
 }: SelectionViewProps) => {
   return (
     <div className={`selection-view ${selection}-background`}>
@@ -24,7 +24,7 @@ export const SelectionView = ({
         </Link>
       </div>
       <div>
-        <h2 className="selection-view-heading">{selectionViewHeading}</h2>
+        <h2 className="selection-view-text">{selectionViewText}</h2>
       </div>
     </div>
   );

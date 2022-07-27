@@ -27,11 +27,31 @@ class App extends Component<Props, State> {
     });
   }
 
+  getNewCall = async (selection: string) => {
+    console.log(selection);
+    if (selection === "compliment") {
+      console.log("inside compliment");
+      await getCompliments().then((json) => {
+        this.setState({ compliment: json.compliment });
+      });
+    }
+    if (selection === "advice") {
+      console.log("inside advice");
+      await getAdvice().then((json) => {
+        this.setState({ advice: json.slip.advice });
+      });
+    }
+  };
+
   render() {
     return (
       <main className="App">
         <Navigation label="See Favorites" />
-        <Routes compliment={this.state.compliment} advice={this.state.advice} />
+        <Routes
+          getNewCall={this.getNewCall}
+          compliment={this.state.compliment}
+          advice={this.state.advice}
+        />
       </main>
     );
   }

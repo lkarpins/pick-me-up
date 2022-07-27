@@ -55,7 +55,7 @@
   text-decoration: none;
 }
 
-.selection-view-heading {
+.selection-view-text {
   filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
   letter-spacing: 0.1rem;
   font-size: 3rem;
@@ -63,6 +63,6 @@
   max-width: 39rem;
 }
 
-.selection-view-heading::first-letter {
+.selection-view-text::first-letter {
   text-transform: uppercase;
 }

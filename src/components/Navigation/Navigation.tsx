@@ -13,7 +13,8 @@ export const Navigation = ({
     return (
         <nav>
             <h1 className="logo">PickMeUp</h1>
-            <Button label="See Favorites" />
+            {/* <Button 
+            label="See Favorites" /> */}
         </nav>
     );
 }
