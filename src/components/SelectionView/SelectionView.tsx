@@ -7,17 +7,25 @@ export interface SelectionViewProps {
   selectionViewHeading: string;
 }
 
-export const SelectionView = ({ selection, selectionViewHeading }: SelectionViewProps) => {
+export const SelectionView = ({
+  selection,
+  selectionViewHeading,
+}: SelectionViewProps) => {
   return (
     <div className={`selection-view ${selection}-background`}>
-      <div className="selection-close">
+      <div className="selection-topbar">
+        <div className="topbar-btn">
+          <span className="material-symbols-outlined icon">favorite</span>
+        </div>
         <Link to="/" className="link-style">
-          <div className="close-btn">
-            <span className="material-icons close">close</span>
+          <div className="topbar-btn">
+            <span className="material-icons icon">close</span>
           </div>
         </Link>
       </div>
-      <h2 className="selection-view-heading">{selectionViewHeading}</h2>
+      <div>
+        <h2 className="selection-view-heading">{selectionViewHeading}</h2>
+      </div>
     </div>
   );
 };

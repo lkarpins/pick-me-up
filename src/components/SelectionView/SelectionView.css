@@ -33,16 +33,16 @@
   max-width: 39rem;
 }
 
-.selection-close {
-    position: sticky;
-    top: 0;
+.selection-topbar {
+    position: absolute;
+    top: 8rem;
+    right: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: rgba(250, 250, 250, .2) solid 1px;
   }
 
-.close-btn {
+.topbar-btn {
   border: none;
   cursor: pointer;
   height: 3rem;
@@ -54,7 +54,7 @@
   align-items: center;
 }
 
-.close {
+.icon {
   color: #ffffff;
   font-size: 2.25rem;
 }
