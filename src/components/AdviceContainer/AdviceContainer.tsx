@@ -9,8 +9,8 @@ export const AdviceContainer = ({
   advice
 }: AdviceContainerProps) => {
   return (
-    <div className='advice-container'>
-      <h2 className='advice-heading'>{advice}</h2>
+    <div className='selection-view advice-background'>
+      <h2 className='selection-view-heading'>{advice}</h2>
     </div>
   );
 }

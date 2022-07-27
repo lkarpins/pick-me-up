@@ -1,3 +1,32 @@
-.advice-container {
-    background-color: black;
+.selection-view {
+    display: flex;
+    padding: 2em;
+    min-height: calc(100vh - 11rem);
+    max-height: calc(100vh - 8rem);
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.advice-background {
+    background: linear-gradient(0deg, #f27a7d, #f7d486, #c5f9d7);
+    background-size: 400% 400%;
+    -webkit-animation: GradientAnimation 15s ease infinite;
+    -moz-animation: GradientAnimation 15s ease infinite;
+    animation: GradientAnimation 15s ease infinite;
+}
+
+.compliment-section {
+    background: linear-gradient(0deg, #c5f9d7, #f7d486, #f27a7d);
+    background-size: 400% 400%;
+    -webkit-animation: GradientAnimation 15s ease infinite;
+    -moz-animation: GradientAnimation 15s ease infinite;
+    animation: GradientAnimation 15s ease infinite;
+}
+
+.selection-view-heading {
+    filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, .5));
+    letter-spacing: .1rem;
+    font-size: 2.5rem;
 }
