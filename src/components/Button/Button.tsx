@@ -3,7 +3,7 @@ import "./Button.css";
 
 export interface ButtonProps {
   label: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement> | undefined;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button = ({ label, onClick }: ButtonProps) => {

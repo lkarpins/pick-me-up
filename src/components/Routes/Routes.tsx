@@ -16,10 +16,18 @@ export const Routes = ({ compliment, advice, getNewCall }: RoutesProps) => {
         <AppContainer getNewCall={getNewCall} />
       </Route>
       <Route exact path="/compliment">
-        <SelectionView selection="compliment" selectionViewText={compliment} />
+        <SelectionView
+          getNewCall={getNewCall}
+          selection="compliment"
+          selectionViewText={compliment}
+        />
       </Route>
       <Route exact path="/advice">
-        <SelectionView selection="advice" selectionViewText={advice} />
+        <SelectionView
+          getNewCall={getNewCall}
+          selection="advice"
+          selectionViewText={advice}
+        />
       </Route>
     </Switch>
   );

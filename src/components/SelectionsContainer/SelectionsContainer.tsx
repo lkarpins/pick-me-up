@@ -2,6 +2,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import { Button } from "../Button/Button";
 import "./SelectionsContainer.css";
+
 export interface SelectionsContainerProps {
   selection: string;
   selectionHeading: string;
