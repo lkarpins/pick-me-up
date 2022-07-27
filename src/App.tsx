@@ -3,11 +3,7 @@ import { getCompliments, getAdvice } from "./ApiCalls";
 import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
 
-
-
-
-
-interface Props { }
+interface Props {}
 interface State {
   compliment: string;
   advice: string;

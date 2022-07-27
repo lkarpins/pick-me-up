@@ -25,22 +25,14 @@
   animation: GradientAnimation 15s ease infinite;
 }
 
-.selection-view-heading {
-  filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
-  letter-spacing: 0.1rem;
-  font-size: 2.5rem;
-  text-align: center;
-  max-width: 39rem;
-}
-
 .selection-topbar {
-    position: absolute;
-    top: 8rem;
-    right: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  position: absolute;
+  top: 8rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .topbar-btn {
   border: none;
@@ -60,5 +52,17 @@
 }
 
 .link-style {
-    text-decoration: none;
-  }
+  text-decoration: none;
+}
+
+.selection-view-heading {
+  filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
+  letter-spacing: 0.1rem;
+  font-size: 3rem;
+  text-align: center;
+  max-width: 39rem;
+}
+
+.selection-view-heading::first-letter {
+  text-transform: uppercase;
+}
