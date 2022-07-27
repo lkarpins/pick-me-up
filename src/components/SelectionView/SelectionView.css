@@ -17,7 +17,7 @@
   animation: GradientAnimation 15s ease infinite;
 }
 
-.compliment-section {
+.compliment-background {
   background: linear-gradient(0deg, #c5f9d7, #f7d486, #f27a7d);
   background-size: 400% 400%;
   -webkit-animation: GradientAnimation 15s ease infinite;
@@ -48,7 +48,7 @@
   height: 3rem;
   width: 3rem;
   background-color: transparent;
-  filter: drop-shadow(0 0 0.75rem #000000);
+  filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
   display: flex;
   justify-content: center;
   align-items: center;
