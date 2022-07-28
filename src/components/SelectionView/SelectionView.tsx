@@ -21,7 +21,7 @@ export const SelectionView = ({
           <span className="material-icons icon">favorite_border</span>
         </div>
         <Link to="/" className="link-style">
-          <div className="topbar-btn">
+          <div className="topbar-btn" onClick={() => getNewCall(selection)}>
             <span className="material-icons icon">close</span>
           </div>
         </Link>

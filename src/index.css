@@ -14,6 +14,7 @@ code {
 html,
 body {
   color: #ffffff;
+  border: 2px solid #103783;
 }
 h1,
 h2 {
