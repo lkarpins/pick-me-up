@@ -1,4 +1,4 @@
-.app-container {
+.home-view {
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -7,7 +7,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .app-container {
+  .home-view {
     flex-direction: column;
   }
 }

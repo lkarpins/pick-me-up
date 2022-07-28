@@ -1,15 +1,15 @@
 import * as React from "react";
 import { Button } from "../Button/Button";
 import { SelectionsContainer } from "../SelectionsContainer/SelectionsContainer";
-import "./AppContainer.css";
+import "./HomeView.css";
 
-export interface AppContainerProps {
+export interface HomeViewProps {
   getNewCall: (selection: string) => void;
 }
 
-export function AppContainer({ getNewCall }: AppContainerProps) {
+export function HomeView({ getNewCall }: HomeViewProps) {
   return (
-    <div className="app-container">
+    <div className="home-view">
       <SelectionsContainer
         getNewCall={getNewCall}
         selection="compliment"
