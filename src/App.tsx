@@ -1,60 +1,40 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { getCompliments, getAdvice } from "./ApiCalls";
 import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
 
-interface Props {}
-interface State {
-  compliment: string;
-  advice: string;
-}
+export const App = () => {
+  const [compliment, setCompliment] = useState("");
+  const [advice, setAdvice] = useState("");
 
-class App extends Component<Props, State> {
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      compliment: "",
-      advice: "",
-    };
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     getCompliments().then((json) => {
-      this.setState({ compliment: json.compliment });
+      setCompliment(json.compliment);
     });
     getAdvice().then((json) => {
-      this.setState({ advice: json.slip.advice });
+      setAdvice(json.slip.advice);
     });
-  }
+  }, []);
 
-  getNewCall = async (selection: string) => {
-    console.log(selection);
+  async function getNewCall(selection: string) {
     if (selection === "compliment") {
-      console.log("inside compliment");
       await getCompliments().then((json) => {
-        this.setState({ compliment: json.compliment });
+        setCompliment(json.compliment);
       });
     }
     if (selection === "advice") {
-      console.log("inside advice");
       await getAdvice().then((json) => {
-        this.setState({ advice: json.slip.advice });
+        setAdvice(json.slip.advice);
       });
     }
-  };
-
-  render() {
-    return (
-      <main className="App">
-        <Navigation label="See Favorites" />
-        <Routes
-          getNewCall={this.getNewCall}
-          compliment={this.state.compliment}
-          advice={this.state.advice}
-        />
-      </main>
-    );
   }
-}
+
+  return (
+    <main className="App">
+      <Navigation label="See Favorites" />
+      <Routes getNewCall={getNewCall} compliment={compliment} advice={advice} />
+    </main>
+  );
+};
 
 export default App;
