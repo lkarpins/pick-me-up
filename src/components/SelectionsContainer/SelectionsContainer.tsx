@@ -7,14 +7,12 @@ export interface SelectionsContainerProps {
   selection: string;
   selectionHeading: string;
   buttonLabel: string;
-  getNewCall: (selection: string) => void;
 }
 
 export const SelectionsContainer = ({
   selection,
   selectionHeading,
   buttonLabel,
-  getNewCall,
 }: SelectionsContainerProps) => {
   return (
     <div className={`selections ${selection}-section`}>

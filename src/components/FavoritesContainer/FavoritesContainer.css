@@ -5,6 +5,11 @@
   min-height: calc(100vh - 8rem);
   max-height: calc(100vh - 8rem);
   flex-direction: column;
+  align-items: flex-start;
+}
+
+.favorites-content {
+  padding: 0.5rem;
 }
 
 .favorites-heading {

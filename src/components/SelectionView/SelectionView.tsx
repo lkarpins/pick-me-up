@@ -7,17 +7,22 @@ export interface SelectionViewProps {
   selection: string;
   selectionViewText: string;
   getNewCall: (selection: string) => void;
+  addToFavorites: (selection: string, favoriteSelection: string) => void;
 }
 
 export const SelectionView = ({
   selection,
   selectionViewText,
   getNewCall,
+  addToFavorites,
 }: SelectionViewProps) => {
   return (
     <div className={`selection-view ${selection}-background`}>
       <div className="selection-topbar">
-        <div className="topbar-btn">
+        <div
+          className="topbar-btn"
+          onClick={() => addToFavorites(selection, selectionViewText)}
+        >
           <span className="material-icons icon">favorite_border</span>
         </div>
         <Link to="/" className="link-style">

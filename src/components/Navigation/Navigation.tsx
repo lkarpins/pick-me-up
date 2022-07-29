@@ -10,7 +10,7 @@ export interface NavigationProps {
 export const Navigation = ({ label }: NavigationProps) => {
   return (
     <nav>
-      <Link to="/">
+      <Link to="/" className="link-style">
         <h1 className="logo">PickMeUp</h1>
       </Link>
       <Link to="/favorites">
