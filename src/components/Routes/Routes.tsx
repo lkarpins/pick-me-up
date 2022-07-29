@@ -46,6 +46,7 @@ export const Routes = ({
         <FavoritesView
           favoriteCompliment={favoriteCompliment}
           favoriteAdvice={favoriteAdvice}
+          addToFavorites={addToFavorites}
         />
       </Route>
     </Switch>

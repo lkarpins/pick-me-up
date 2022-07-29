@@ -32,22 +32,27 @@ export const App = () => {
   };
 
   const addToFavorites = (selection: string, favoriteSelection: string) => {
-    if (
-      selection === "compliment" &&
-      !favoriteCompliment.includes(favoriteSelection)
-    ) {
-      setFavoriteCompliment([...favoriteCompliment, favoriteSelection]);
+    if (selection === "compliment") {
+      if (!favoriteCompliment.includes(favoriteSelection)) {
+        setFavoriteCompliment([...favoriteCompliment, favoriteSelection]);
+      } else {
+        const filteredFavorites = favoriteCompliment.filter(
+          (compliment) => compliment !== favoriteSelection
+        );
+        setFavoriteCompliment(filteredFavorites);
+      }
     }
-    if (selection === "advice" && !favoriteAdvice.includes(favoriteSelection)) {
-      setFavoriteAdvice([...favoriteAdvice, favoriteSelection]);
+    if (selection === "advice") {
+      if (!favoriteAdvice.includes(favoriteSelection)) {
+        setFavoriteAdvice([...favoriteAdvice, favoriteSelection]);
+      } else {
+        const filteredFavorites = favoriteAdvice.filter(
+          (advice) => advice !== favoriteSelection
+        );
+        setFavoriteAdvice(filteredFavorites);
+      }
     }
   };
-
-  // deleteToFavorite = id => {
-  //   const hapus = this.state.booksfav.filter(item => item.id !== id);
-  //   this.setState({ booksfav: hapus });
-  // };
-
   return (
     <main className="App">
       <Navigation label="See Favorites" />
