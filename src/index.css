@@ -14,6 +14,7 @@ code {
 html,
 body {
   color: #ffffff;
+  border: 2px solid #103783;
 }
 h1,
 h2 {
@@ -23,4 +24,11 @@ h2 {
 p,
 button {
   font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+.link-style {
+  text-decoration: none;
+
+  color: white;
 }

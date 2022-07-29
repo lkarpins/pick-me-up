@@ -1,0 +1,92 @@
+.favorites {
+  display: flex;
+  width: 50%;
+  padding: 2em;
+  min-height: calc(100vh - 8rem);
+  max-height: calc(100vh - 8rem);
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.favorite-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.favorites-content {
+  padding: 0.5rem;
+}
+
+.favorites-heading {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
+}
+
+.favorite-text {
+  padding-left: 1rem;
+  font-weight: 700;
+  font-size: 1.25rem;
+  filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
+}
+
+.favorite-text::first-letter {
+  text-transform: uppercase;
+}
+.advice-section {
+  background: linear-gradient(0deg, #f27a7d, #f7d486, #c5f9d7);
+  background-size: 400% 400%;
+  -webkit-animation: GradientAnimation 15s ease infinite;
+  -moz-animation: GradientAnimation 15s ease infinite;
+  animation: GradientAnimation 15s ease infinite;
+}
+
+.compliment-section {
+  background: linear-gradient(0deg, #c5f9d7, #f7d486, #f27a7d);
+  background-size: 400% 400%;
+  -webkit-animation: GradientAnimation 15s ease infinite;
+  -moz-animation: GradientAnimation 15s ease infinite;
+  animation: GradientAnimation 15s ease infinite;
+}
+
+@media screen and (max-width: 600px) {
+  .selections {
+    width: auto;
+    min-height: 200px;
+  }
+}
+
+@-webkit-keyframes GradientAnimation {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+@-moz-keyframes GradientAnimation {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+@keyframes GradientAnimation {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}

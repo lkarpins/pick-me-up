@@ -40,7 +40,6 @@
   height: 3rem;
   width: 3rem;
   background-color: transparent;
-  filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,6 +48,7 @@
 .icon {
   color: #ffffff;
   font-size: 2.25rem;
+  filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
 }
 
 .link-style {
