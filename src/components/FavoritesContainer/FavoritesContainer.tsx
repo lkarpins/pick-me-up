@@ -16,15 +16,15 @@ export const FavoritesContainer = ({
 }: FavoritesContainerProps) => {
   const favoritesContent = favoriteSelection.map((favSelection) => {
     return (
-      <p>
+      <div className="favorite-item">
         <span
           className="material-icons icon"
           onClick={() => addToFavorites(selection, favSelection)}
         >
-          favorite_border
+          favorite
         </span>
-        {favSelection}
-      </p>
+        <p className="favorite-text">{favSelection}</p>
+      </div>
     );
   });
   return (
