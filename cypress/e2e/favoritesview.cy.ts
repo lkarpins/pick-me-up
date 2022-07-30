@@ -14,5 +14,10 @@ describe("PickMeUp FavoriesView", () => {
         .invoke("getItem", "adviceFavorites")
         .should("not.exist");
     });
+
+    it("should display a message of no favorites saved in each favoritesContainer", () => {
+      cy.dataCy("compliment-section").contains("No Favorites Saved");
+      cy.dataCy("advice-section").contains("No Favorites Saved");
+    });
   });
 });
