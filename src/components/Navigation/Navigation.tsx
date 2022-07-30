@@ -8,18 +8,23 @@ export interface NavigationProps {
 }
 
 export const Navigation = ({ label }: NavigationProps) => {
-  const location = useLocation()
+  const location = useLocation();
   console.log("location", location);
-  
+
   return (
     <nav>
       <Link to="/" className="link-style">
         <h1 className="logo">PickMeUp</h1>
       </Link>
-      {location.pathname !== "/favorites" && <Link to="/favorites">
-        <Button label="See Favorites" />
-      </Link>}
-      
+      {location.pathname !== "/favorites" ? (
+        <Link to="/favorites">
+          <Button label="See Favorites" />
+        </Link>
+      ) : (
+        <Link to="/">
+          <Button label="Back Home" />
+        </Link>
+      )}
     </nav>
   );
 };

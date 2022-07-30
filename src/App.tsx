@@ -4,12 +4,17 @@ import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
 import { useLocalStorage } from "./utilities/useLocalStorage";
 
-
 export const App = () => {
   const [compliment, setCompliment] = useState("");
   const [advice, setAdvice] = useState("");
-  const [favoriteCompliment, setFavoriteCompliment] = useLocalStorage("complimentFavorite", []);
-  const [favoriteAdvice, setFavoriteAdvice] = useLocalStorage("adviceFavorite", []);
+  const [favoriteCompliment, setFavoriteCompliment] = useLocalStorage(
+    "complimentFavorite",
+    []
+  );
+  const [favoriteAdvice, setFavoriteAdvice] = useLocalStorage(
+    "adviceFavorite",
+    []
+  );
 
   useEffect(() => {
     getCompliments().then((json) => {
@@ -37,21 +42,24 @@ export const App = () => {
     if (selection === "compliment") {
       if (!favoriteCompliment.includes(favoriteSelection)) {
         setFavoriteCompliment([...favoriteCompliment, favoriteSelection]);
+        return true;
       } else {
         const filteredFavorites = favoriteCompliment.filter(
           (compliment: string) => compliment !== favoriteSelection
         );
         setFavoriteCompliment(filteredFavorites);
+        return false;
       }
-    }
-    if (selection === "advice") {
+    } else if (selection === "advice") {
       if (!favoriteAdvice.includes(favoriteSelection)) {
         setFavoriteAdvice([...favoriteAdvice, favoriteSelection]);
+        return true;
       } else {
         const filteredFavorites = favoriteAdvice.filter(
           (advice: string) => advice !== favoriteSelection
         );
         setFavoriteAdvice(filteredFavorites);
+        return false;
       }
     }
   };

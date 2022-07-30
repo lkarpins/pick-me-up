@@ -8,7 +8,7 @@ export interface RoutesProps {
   compliment: string;
   advice: string;
   getNewCall: (selection: string) => void;
-  toggleFavorites: (selection: string, favoriteSelection: string) => void;
+  toggleFavorites: (selection: string, favoriteSelection: string) => boolean | undefined;
   favoriteCompliment: string[];
   favoriteAdvice: string[];
 }
