@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./FavoritesContainer.css";
 
 export interface FavoritesContainerProps {
@@ -14,35 +14,31 @@ export const FavoritesContainer = ({
   favoriteSelection,
   toggleFavorites,
 }: FavoritesContainerProps) => {
-  
-  // const [favorites, setFavorites] = useState<string[]>(() => {
-  //   const saved: string = localStorage.getItem(`${selection}Favorite`)!
-  //   const initialValue = JSON.parse(saved)
-  //   return initialValue || [`Sorry you have no favorite ${selection}.`]
-  // });
-
-  // const selectionFavorite: string = `${selection}Favorite`
-
-  // useEffect(() => {
-  //   localStorage.setItem(selectionFavorite, JSON.stringify(favorites))
-  // }, [selectionFavorite, favorites])
-  const favoritesContent = favoriteSelection.map((favSelection) => {
-    return (
-      <div className="favorite-item">
-        <span
-          className="material-icons icon"
-          onClick={() => toggleFavorites(selection, favSelection)}
-        >
-          favorite
-        </span>
-        <p className="favorite-text">{favSelection}</p>
-      </div>
-    );
-  });
+  const favoritesContent = favoriteSelection.map(
+    (favSelection: string, index) => {
+      return (
+        <div className="favorite-item" key={index}>
+          <span
+            className="material-icons icon"
+            onClick={() => toggleFavorites(selection, favSelection)}
+          >
+            favorite
+          </span>
+          <p className="favorite-text">{favSelection}</p>
+        </div>
+      );
+    }
+  );
   return (
     <div className={`favorites ${selection}-section`}>
       <h2 className="favorites-heading">{selectionHeading}</h2>
-      <div className="favorites-content">{favoritesContent}</div>
+      <div className="favorites-content">
+        {favoriteSelection.length > 0 ? (
+          favoritesContent
+        ) : (
+          <p className="favorite-text">No Favorites Saved</p>
+        )}
+      </div>
     </div>
   );
 };
