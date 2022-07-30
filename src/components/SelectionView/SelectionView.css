@@ -49,6 +49,7 @@
   color: #ffffff;
   font-size: 2.25rem;
   filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
+  cursor: pointer;
 }
 
 .link-style {

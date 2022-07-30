@@ -8,7 +8,7 @@ export interface RoutesProps {
   compliment: string;
   advice: string;
   getNewCall: (selection: string) => void;
-  addToFavorites: (selection: string, favoriteSelection: string) => void;
+  toggleFavorites: (selection: string, favoriteSelection: string) => void;
   favoriteCompliment: string[];
   favoriteAdvice: string[];
 }
@@ -17,7 +17,7 @@ export const Routes = ({
   compliment,
   advice,
   getNewCall,
-  addToFavorites,
+  toggleFavorites,
   favoriteCompliment,
   favoriteAdvice,
 }: RoutesProps) => {
@@ -31,7 +31,7 @@ export const Routes = ({
           getNewCall={getNewCall}
           selection="compliment"
           selectionViewText={compliment}
-          addToFavorites={addToFavorites}
+          toggleFavorites={toggleFavorites}
         />
       </Route>
       <Route exact path="/advice">
@@ -39,14 +39,14 @@ export const Routes = ({
           getNewCall={getNewCall}
           selection="advice"
           selectionViewText={advice}
-          addToFavorites={addToFavorites}
+          toggleFavorites={toggleFavorites}
         />
       </Route>
       <Route exact path="/favorites">
         <FavoritesView
           favoriteCompliment={favoriteCompliment}
           favoriteAdvice={favoriteAdvice}
-          addToFavorites={addToFavorites}
+          toggleFavorites={toggleFavorites}
         />
       </Route>
     </Switch>

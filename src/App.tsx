@@ -31,25 +31,29 @@ export const App = () => {
     }
   };
 
-  const addToFavorites = (selection: string, favoriteSelection: string) => {
+  const toggleFavorites = (selection: string, favoriteSelection: string) => {
     if (selection === "compliment") {
       if (!favoriteCompliment.includes(favoriteSelection)) {
         setFavoriteCompliment([...favoriteCompliment, favoriteSelection]);
+        localStorage.setItem("complimentFavorite", JSON.stringify([...favoriteCompliment, favoriteSelection]))
       } else {
         const filteredFavorites = favoriteCompliment.filter(
           (compliment) => compliment !== favoriteSelection
         );
         setFavoriteCompliment(filteredFavorites);
+        localStorage.setItem("complimentFavorite", JSON.stringify(filteredFavorites))
       }
     }
     if (selection === "advice") {
       if (!favoriteAdvice.includes(favoriteSelection)) {
         setFavoriteAdvice([...favoriteAdvice, favoriteSelection]);
+        localStorage.setItem("adviceFavorite", JSON.stringify([...favoriteAdvice, favoriteSelection]))
       } else {
         const filteredFavorites = favoriteAdvice.filter(
           (advice) => advice !== favoriteSelection
         );
         setFavoriteAdvice(filteredFavorites);
+        localStorage.setItem("adviceFavorite", JSON.stringify(filteredFavorites))
       }
     }
   };
@@ -60,7 +64,7 @@ export const App = () => {
         getNewCall={getNewCall}
         compliment={compliment}
         advice={advice}
-        addToFavorites={addToFavorites}
+        toggleFavorites={toggleFavorites}
         favoriteCompliment={favoriteCompliment}
         favoriteAdvice={favoriteAdvice}
       />
