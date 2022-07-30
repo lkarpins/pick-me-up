@@ -9,7 +9,6 @@ export interface NavigationProps {
 
 export const Navigation = ({ label }: NavigationProps) => {
   const location = useLocation();
-  console.log("location", location);
 
   return (
     <nav>
