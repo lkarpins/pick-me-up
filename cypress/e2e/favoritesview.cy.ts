@@ -19,5 +19,13 @@ describe("PickMeUp FavoriesView", () => {
       cy.dataCy("compliment-section").contains("No Favorites Saved");
       cy.dataCy("advice-section").contains("No Favorites Saved");
     });
+
+    it("should route you home when you click on the back to home button", () => {
+      cy.dataCy("home-button").click().url().should("include", "/");
+    });
+
+    it("should route you home when you click on the logo", () => {
+      cy.dataCy("logo").click().url().should("include", "/");
+    });
   });
 });
