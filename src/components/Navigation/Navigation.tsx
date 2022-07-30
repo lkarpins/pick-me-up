@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Button } from "../Button/Button";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./Navigation.css";
 
 export interface NavigationProps {
@@ -8,14 +8,18 @@ export interface NavigationProps {
 }
 
 export const Navigation = ({ label }: NavigationProps) => {
+  const location = useLocation()
+  console.log("location", location);
+  
   return (
     <nav>
       <Link to="/" className="link-style">
         <h1 className="logo">PickMeUp</h1>
       </Link>
-      <Link to="/favorites">
+      {location.pathname !== "/favorites" && <Link to="/favorites">
         <Button label="See Favorites" />
-      </Link>
+      </Link>}
+      
     </nav>
   );
 };
