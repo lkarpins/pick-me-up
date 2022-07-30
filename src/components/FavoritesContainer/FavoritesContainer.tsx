@@ -5,21 +5,21 @@ export interface FavoritesContainerProps {
   selection: string;
   selectionHeading: string;
   favoriteSelection: string[];
-  addToFavorites: (selection: string, favoriteSelection: string) => void;
+  toggleFavorites: (selection: string, favoriteSelection: string) => void;
 }
 
 export const FavoritesContainer = ({
   selection,
   selectionHeading,
   favoriteSelection,
-  addToFavorites,
+  toggleFavorites,
 }: FavoritesContainerProps) => {
   const favoritesContent = favoriteSelection.map((favSelection) => {
     return (
       <div className="favorite-item">
         <span
           className="material-icons icon"
-          onClick={() => addToFavorites(selection, favSelection)}
+          onClick={() => toggleFavorites(selection, favSelection)}
         >
           favorite
         </span>

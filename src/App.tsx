@@ -31,7 +31,7 @@ export const App = () => {
     }
   };
 
-  const addToFavorites = (selection: string, favoriteSelection: string) => {
+  const toggleFavorites = (selection: string, favoriteSelection: string) => {
     if (selection === "compliment") {
       if (!favoriteCompliment.includes(favoriteSelection)) {
         setFavoriteCompliment([...favoriteCompliment, favoriteSelection]);
@@ -60,7 +60,7 @@ export const App = () => {
         getNewCall={getNewCall}
         compliment={compliment}
         advice={advice}
-        addToFavorites={addToFavorites}
+        toggleFavorites={toggleFavorites}
         favoriteCompliment={favoriteCompliment}
         favoriteAdvice={favoriteAdvice}
       />
