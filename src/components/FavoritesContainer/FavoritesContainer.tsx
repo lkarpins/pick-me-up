@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./FavoritesContainer.css";
 
 export interface FavoritesContainerProps {
@@ -14,21 +14,10 @@ export const FavoritesContainer = ({
   favoriteSelection,
   toggleFavorites,
 }: FavoritesContainerProps) => {
-  
-  // const [favorites, setFavorites] = useState<string[]>(() => {
-  //   const saved: string = localStorage.getItem(`${selection}Favorite`)!
-  //   const initialValue = JSON.parse(saved)
-  //   return initialValue || [`Sorry you have no favorite ${selection}.`]
-  // });
 
-  // const selectionFavorite: string = `${selection}Favorite`
-
-  // useEffect(() => {
-  //   localStorage.setItem(selectionFavorite, JSON.stringify(favorites))
-  // }, [selectionFavorite, favorites])
-  const favoritesContent = favoriteSelection.map((favSelection) => {
+  const favoritesContent = favoriteSelection.map((favSelection: string) => {
     return (
-      <div className="favorite-item">
+      <div className="favorite-item" key="favSelection">
         <span
           className="material-icons icon"
           onClick={() => toggleFavorites(selection, favSelection)}

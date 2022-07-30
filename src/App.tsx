@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import { getCompliments, getAdvice } from "./ApiCalls";
 import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
+import { useLocalStorage } from "./utilities/useLocalStorage";
+
 
 export const App = () => {
   const [compliment, setCompliment] = useState("");
   const [advice, setAdvice] = useState("");
-  const [favoriteCompliment, setFavoriteCompliment] = useState<string[]>([]);
-  const [favoriteAdvice, setFavoriteAdvice] = useState<string[]>([]);
+  const [favoriteCompliment, setFavoriteCompliment] = useLocalStorage("complimentFavorite", []);
+  const [favoriteAdvice, setFavoriteAdvice] = useLocalStorage("adviceFavorite", []);
 
   useEffect(() => {
     getCompliments().then((json) => {
@@ -35,25 +37,21 @@ export const App = () => {
     if (selection === "compliment") {
       if (!favoriteCompliment.includes(favoriteSelection)) {
         setFavoriteCompliment([...favoriteCompliment, favoriteSelection]);
-        localStorage.setItem("complimentFavorite", JSON.stringify([...favoriteCompliment, favoriteSelection]))
       } else {
         const filteredFavorites = favoriteCompliment.filter(
-          (compliment) => compliment !== favoriteSelection
+          (compliment: string) => compliment !== favoriteSelection
         );
         setFavoriteCompliment(filteredFavorites);
-        localStorage.setItem("complimentFavorite", JSON.stringify(filteredFavorites))
       }
     }
     if (selection === "advice") {
       if (!favoriteAdvice.includes(favoriteSelection)) {
         setFavoriteAdvice([...favoriteAdvice, favoriteSelection]);
-        localStorage.setItem("adviceFavorite", JSON.stringify([...favoriteAdvice, favoriteSelection]))
       } else {
         const filteredFavorites = favoriteAdvice.filter(
-          (advice) => advice !== favoriteSelection
+          (advice: string) => advice !== favoriteSelection
         );
         setFavoriteAdvice(filteredFavorites);
-        localStorage.setItem("adviceFavorite", JSON.stringify(filteredFavorites))
       }
     }
   };
