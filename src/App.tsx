@@ -3,6 +3,7 @@ import { getCompliments, getAdvice } from "./ApiCalls";
 import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
 import { useLocalStorage } from "./utilities/useLocalStorage";
+import { execute, executeAsync } from "./utilities/exceptionHandlers";
 
 export const App = () => {
   const [compliment, setCompliment] = useState("");
@@ -15,26 +16,27 @@ export const App = () => {
     "adviceFavorite",
     []
   );
+  const [error, setError] = useState(new Error());
 
   useEffect(() => {
-    getCompliments().then((json) => {
-      setCompliment(json.compliment);
-    });
-    getAdvice().then((json) => {
-      setAdvice(json.slip.advice);
-    });
+    getNewCall("compliment");
+    getNewCall("advice");
   }, []);
 
   const getNewCall = async (selection: string) => {
     if (selection === "compliment") {
-      await getCompliments().then((json) => {
-        setCompliment(json.compliment);
-      });
+      const [res, err] = await executeAsync(getCompliments);
+      if (err) {
+        return setError(err);
+      }
+      setCompliment(res.compliment);
     }
     if (selection === "advice") {
-      await getAdvice().then((json) => {
-        setAdvice(json.slip.advice);
-      });
+      const [res, err] = await executeAsync(getAdvice);
+      if (err) {
+        return setError(err);
+      }
+      setAdvice(res.slip.advice);
     }
   };
 
