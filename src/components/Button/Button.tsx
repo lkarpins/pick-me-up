@@ -8,7 +8,7 @@ export interface ButtonProps {
 
 export const Button = ({ label, onClick }: ButtonProps) => {
   return (
-    <button onClick={onClick} className="app-button">
+    <button onClick={onClick} className="app-button" data-cy="app-button">
       {label}
     </button>
   );
