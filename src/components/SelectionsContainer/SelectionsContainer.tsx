@@ -16,7 +16,7 @@ export const SelectionsContainer = ({
 }: SelectionsContainerProps) => {
   return (
     <div className={`selections ${selection}-section`}>
-      <h2 className="selection-heading">{selectionHeading}</h2>
+      <h2 className="selection-heading" data-cy="selection-heading">{selectionHeading}</h2>
       <Link to={`/${selection}`}>
         <Button label={buttonLabel} />
       </Link>
