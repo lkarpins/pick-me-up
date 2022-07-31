@@ -4,8 +4,10 @@ import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
 import { useLocalStorage } from "./utilities/useLocalStorage";
 import { execute, executeAsync } from "./utilities/exceptionHandlers";
+import { ErrorView } from "./components/ErrorView/ErrorView";
+import { ErrorBoundary } from "react-error-boundary";
 
-export const App = () => {
+const App = () => {
   const [compliment, setCompliment] = useState("");
   const [advice, setAdvice] = useState("");
   const [favoriteCompliment, setFavoriteCompliment] = useLocalStorage(
@@ -67,15 +69,18 @@ export const App = () => {
   };
   return (
     <main className="App">
-      <Navigation label="See Favorites" />
-      <Routes
-        getNewCall={getNewCall}
-        compliment={compliment}
-        advice={advice}
-        toggleFavorites={toggleFavorites}
-        favoriteCompliment={favoriteCompliment}
-        favoriteAdvice={favoriteAdvice}
-      />
+      <ErrorBoundary FallbackComponent={ErrorView}>
+        <Navigation label="See Favorites" />
+        <Routes
+          error={error}
+          getNewCall={getNewCall}
+          compliment={compliment}
+          advice={advice}
+          toggleFavorites={toggleFavorites}
+          favoriteCompliment={favoriteCompliment}
+          favoriteAdvice={favoriteAdvice}
+        />
+      </ErrorBoundary>
     </main>
   );
 };

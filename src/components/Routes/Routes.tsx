@@ -3,17 +3,23 @@ import { Route, Switch } from "react-router-dom";
 import { SelectionView } from "../SelectionView/SelectionView";
 import { HomeView } from "../HomeView/HomeView";
 import { FavoritesView } from "../FavoritesView/FavoritesView";
+import { ErrorView } from "../ErrorView/ErrorView";
 
 export interface RoutesProps {
+  error: Error;
   compliment: string;
   advice: string;
   getNewCall: (selection: string) => void;
-  toggleFavorites: (selection: string, favoriteSelection: string) => boolean | undefined;
+  toggleFavorites: (
+    selection: string,
+    favoriteSelection: string
+  ) => boolean | undefined;
   favoriteCompliment: string[];
   favoriteAdvice: string[];
 }
 
 export const Routes = ({
+  error,
   compliment,
   advice,
   getNewCall,
@@ -48,6 +54,9 @@ export const Routes = ({
           favoriteAdvice={favoriteAdvice}
           toggleFavorites={toggleFavorites}
         />
+      </Route>
+      <Route exact path="*">
+        <ErrorView error={new Error("This path doesn't exist!")} />
       </Route>
     </Switch>
   );
