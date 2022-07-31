@@ -20,6 +20,7 @@ export const FavoritesContainer = ({
         <div className="favorite-item" key={index}>
           <span
             className="material-icons icon"
+            data-cy="favorite-icon"
             onClick={() => toggleFavorites(selection, favSelection)}
           >
             favorite
@@ -30,7 +31,10 @@ export const FavoritesContainer = ({
     }
   );
   return (
-    <div className={`favorites ${selection}-section`}>
+    <div
+      className={`favorites ${selection}-section`}
+      data-cy={`${selection}-section`}
+    >
       <h2 className="favorites-heading">{selectionHeading}</h2>
       <div className="favorites-content">
         {favoriteSelection.length > 0 ? (
