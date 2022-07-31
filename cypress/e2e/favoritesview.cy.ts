@@ -1,17 +1,23 @@
+import adviceFavorite from "../fixtures/adviceFavorite.json";
+
 describe("PickMeUp FavoriesView", () => {
   describe("Initial View", () => {
     beforeEach(() => {
       cy.visit("http://localhost:3000/favorites");
     });
 
+    afterEach(() => {
+      cy.visit("http://localhost:3000/favorites");
+    });
+
     it("should load with no saved favorites", () => {
       cy.window()
         .its("localStorage")
-        .invoke("getItem", "complimentFavorites")
+        .invoke("getItem", "complimentFavorite")
         .should("not.exist");
       cy.window()
         .its("localStorage")
-        .invoke("getItem", "adviceFavorites")
+        .invoke("getItem", "adviceFavorite")
         .should("not.exist");
     });
 
@@ -26,6 +32,33 @@ describe("PickMeUp FavoriesView", () => {
 
     it("should route you home when you click on the logo", () => {
       cy.dataCy("logo").click().url().should("include", "/");
+    });
+  });
+
+  describe("With favorites view", () => {
+    beforeEach(() => {
+      cy.readFile('./cypress/fixtures/complimentFavorite.json').then((json) => {
+        localStorage.setItem("complimentFavorite", JSON.stringify(json))
+      })
+      cy.readFile('./cypress/fixtures/adviceFavorite.json').then((json) => {
+        localStorage.setItem("adviceFavorite", JSON.stringify(json))
+      })
+      cy.visit("http://localhost:3000/favorites");
+    });
+
+    afterEach(() => {
+      cy.clearLocalStorage()
+    })
+
+    it("should have saved favorites", () => {
+      cy.window()
+        .its("localStorage")
+        .invoke("getItem", "complimentFavorite")
+        .should("exist");
+      cy.window()
+        .its("localStorage")
+        .invoke("getItem", "adviceFavorite")
+        .should("exist");
     });
   });
 });
