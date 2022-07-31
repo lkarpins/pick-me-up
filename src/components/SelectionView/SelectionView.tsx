@@ -49,7 +49,11 @@ export const SelectionView = ({
           )}
         </div>
         <Link to="/" className="link-style">
-          <div className="topbar-btn" onClick={() => onNewCallClick(selection)}>
+          <div
+            className="topbar-btn"
+            data-cy="x-icon"
+            onClick={() => onNewCallClick(selection)}
+          >
             <span className="material-icons icon">close</span>
           </div>
         </Link>

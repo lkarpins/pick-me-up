@@ -55,8 +55,16 @@ describe("PickMeUp SelectionsView", () => {
       );
     });
 
-    it("should route you home when you click on the logo", () => {
-      cy.dataCy("logo").click().url().should("include", "/");
+    it("should route you to favorites when 'See favorites' button clicked", () => {
+      cy.dataCy("app-button")
+        .contains("See Favorites")
+        .click()
+        .url()
+        .should("include", "/favorites");
+    });
+
+    it("should route you home when you click on the 'X-icon'", () => {
+      cy.dataCy("x-icon").click().url().should("include", "/");
     });
   });
 
@@ -69,13 +77,63 @@ describe("PickMeUp SelectionsView", () => {
     });
 
     afterEach(() => {
-      cy.visit("http://localhost:3000/advice");
+      cy.clearLocalStorage();
     });
 
     it("should display advice", () => {
       cy.dataCy("selection-view-text").contains(
         "Make choices and dont look back."
       );
+    });
+
+    it("should be able to favorite advice when heart icon clicked", () => {
+      cy.dataCy("selection-view-text").contains(
+        "Make choices and dont look back."
+      );
+      cy.dataCy("favorite-icon").click();
+      cy.window()
+        .its("localStorage")
+        .invoke("getItem", "adviceFavorite")
+        .should("contain", "Make choices and dont look back.");
+    });
+
+    it("should be able to un-favorite advice when heart icon clicked", () => {
+      cy.dataCy("selection-view-text").contains(
+        "Make choices and dont look back."
+      );
+      cy.dataCy("favorite-icon").click();
+      cy.window()
+        .its("localStorage")
+        .invoke("getItem", "adviceFavorite")
+        .should("contain", "Make choices and dont look back.");
+      cy.dataCy("unfavorite-icon").click();
+      cy.window()
+        .its("localStorage")
+        .invoke("getItem", "adviceFavorite")
+        .should("not.contain", "Make choices and dont look back.");
+    });
+
+    it("should display different advice when 'Get New Advice' button clicked", () => {
+      cy.dataCy("app-button").contains("Get New advice").click();
+      cy.intercept("GET", "https://api.adviceslip.com/advice", {
+        fixture: "advice2",
+      });
+      cy.visit("http://localhost:3000/advice");
+      cy.dataCy("selection-view-text").contains(
+        "Try going commando to an important meeting, NB: don't wear a skirt."
+      );
+    });
+
+    it("should route you to favorites when 'See favorites' button clicked", () => {
+      cy.dataCy("app-button")
+        .contains("See Favorites")
+        .click()
+        .url()
+        .should("include", "/favorites");
+    });
+
+    it("should route you home when you click on the 'X-icon'", () => {
+      cy.dataCy("x-icon").click().url().should("include", "/");
     });
   });
 });
