@@ -1,6 +1,4 @@
-import adviceFavorite from "../fixtures/adviceFavorite.json";
-
-describe("PickMeUp FavoriesView", () => {
+describe("PickMeUp FavoritesView", () => {
   describe("Initial View", () => {
     beforeEach(() => {
       cy.visit("http://localhost:3000/favorites");
@@ -37,18 +35,18 @@ describe("PickMeUp FavoriesView", () => {
 
   describe("With favorites view", () => {
     beforeEach(() => {
-      cy.readFile('./cypress/fixtures/complimentFavorite.json').then((json) => {
-        localStorage.setItem("complimentFavorite", JSON.stringify(json))
-      })
-      cy.readFile('./cypress/fixtures/adviceFavorite.json').then((json) => {
-        localStorage.setItem("adviceFavorite", JSON.stringify(json))
-      })
+      cy.readFile("./cypress/fixtures/complimentFavorite.json").then((json) => {
+        localStorage.setItem("complimentFavorite", JSON.stringify(json));
+      });
+      cy.readFile("./cypress/fixtures/adviceFavorite.json").then((json) => {
+        localStorage.setItem("adviceFavorite", JSON.stringify(json));
+      });
       cy.visit("http://localhost:3000/favorites");
     });
 
     afterEach(() => {
-      cy.clearLocalStorage()
-    })
+      cy.clearLocalStorage();
+    });
 
     it("should have saved favorites", () => {
       cy.window()
@@ -59,6 +57,41 @@ describe("PickMeUp FavoriesView", () => {
         .its("localStorage")
         .invoke("getItem", "adviceFavorite")
         .should("exist");
+    });
+
+    it("should be able to un-favorite a compliment", () => {
+      cy.dataCy("compliment-section")
+        .within(() => {
+          cy.dataCy("favorite-icon").first().click();
+        })
+        .should("not.contain", "they say you are extremely phenomenal");
+    });
+
+    it("should be able to un-favorite advice", () => {
+      cy.dataCy("advice-section")
+        .within(() => {
+          cy.dataCy("favorite-icon").first().click();
+        })
+        .should("not.contain", "Make choices and dont look back.");
+    });
+
+    it("should display no saved favorites message when all favorites have been removed from compliments", () => {
+      cy.dataCy("compliment-section")
+        .within(() => {
+          cy.dataCy("favorite-icon").first().click();
+          cy.dataCy("favorite-icon").first().click();
+        })
+
+        .should("contain", "No Favorites Saved");
+    });
+
+    it("should display no saved favorites message when all favorites have been removed from advice", () => {
+      cy.dataCy("advice-section")
+        .within(() => {
+          cy.dataCy("favorite-icon").first().click();
+          cy.dataCy("favorite-icon").first().click();
+        })
+        .should("contain", "No Favorites Saved");
     });
   });
 });

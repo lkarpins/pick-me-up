@@ -20,6 +20,7 @@ export const FavoritesContainer = ({
         <div className="favorite-item" key={index}>
           <span
             className="material-icons icon"
+            data-cy="favorite-icon"
             onClick={() => toggleFavorites(selection, favSelection)}
           >
             favorite
