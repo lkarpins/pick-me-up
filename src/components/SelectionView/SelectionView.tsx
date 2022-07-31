@@ -30,7 +30,7 @@ export const SelectionView = ({
     getNewCall(selection);
     setIsFavorite(false);
   };
-  
+
   return (
     <div className={`selection-view ${selection}-background`}>
       <div className="selection-topbar">
@@ -39,14 +39,19 @@ export const SelectionView = ({
           onClick={() => onFavoriteClick(selection, selectionViewText)}
         >
           {isFavorite ? (
-            <span className="material-icons icon">favorite</span>
+            <span className="material-icons icon" data-cy="unfavorite-icon">
+              favorite
+            </span>
           ) : (
-            <span className="material-icons icon">favorite_border</span>
+            <span className="material-icons icon" data-cy="favorite-icon">
+              favorite_border
+            </span>
           )}
         </div>
         <Link to="/" className="link-style">
           <div
             className="topbar-btn"
+            data-cy="x-icon"
             onClick={() => onNewCallClick(selection)}
           >
             <span className="material-icons icon">close</span>
@@ -54,10 +59,13 @@ export const SelectionView = ({
         </Link>
       </div>
       <div className="selection-content">
-        <h2 className="selection-view-text">{selectionViewText}</h2>
+        <h2 className="selection-view-text" data-cy="selection-view-text">
+          {selectionViewText}
+        </h2>
         <Button
           onClick={() => onNewCallClick(selection)}
           label={`Get New ${selection}`}
+          data-cy="get-new-button"
         />
       </div>
     </div>
