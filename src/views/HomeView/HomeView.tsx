@@ -1,13 +1,9 @@
 import * as React from "react";
-import { Button } from "../Button/Button";
-import { SelectionsContainer } from "../SelectionsContainer/SelectionsContainer";
-import "./HomeView.css";
+import { SelectionsContainer } from "../../components/SelectionsContainer/SelectionsContainer";
 
-export interface HomeViewProps {}
-
-export function HomeView({}: HomeViewProps) {
+export function HomeView() {
   return (
-    <div className="home-view">
+    <div className="view">
       <SelectionsContainer
         selection="compliment"
         selectionHeading="Are you looking for a confidence boost?"

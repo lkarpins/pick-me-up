@@ -1,11 +1,12 @@
 import React from "react";
+import { HasSelection, HasToggleFavorites } from "../../types";
 import "./FavoritesContainer.css";
 
-export interface FavoritesContainerProps {
-  selection: string;
+export interface FavoritesContainerProps
+  extends HasSelection,
+    HasToggleFavorites {
   selectionHeading: string;
   favoriteSelection: string[];
-  toggleFavorites: (selection: string, favoriteSelection: string) => void;
 }
 
 export const FavoritesContainer = ({
@@ -19,30 +20,33 @@ export const FavoritesContainer = ({
       return (
         <div className="favorite-item" key={index}>
           <span
-            className="material-icons icon"
+            className="material-icons icon favorite-view-heart"
             data-cy="favorite-icon"
             onClick={() => toggleFavorites(selection, favSelection)}
           >
             favorite
           </span>
-          <p className="favorite-text">{favSelection}</p>
+          <p className="favorite-text with-heart">{favSelection}</p>
         </div>
       );
     }
   );
+
   return (
-    <div
-      className={`favorites ${selection}-section`}
-      data-cy={`${selection}-section`}
-    >
-      <h2 className="favorites-heading">{selectionHeading}</h2>
-      <div className="favorites-content">
-        {favoriteSelection.length > 0 ? (
-          favoritesContent
-        ) : (
-          <p className="favorite-text">No Favorites Saved</p>
-        )}
+      <div
+        className={`flex-background favorites ${selection}-section`}
+        data-cy={`${selection}-section`}
+      >
+        <div className="favorites-card">
+          <h2 className="favorites-heading">{selectionHeading}</h2>
+          <div className="favorites-content">
+            {favoriteSelection.length > 0 ? (
+              favoritesContent
+            ) : (
+              <p className="favorite-text">No Favorites Saved</p>
+            )}
+          </div>
+        </div>
       </div>
-    </div>
   );
 };

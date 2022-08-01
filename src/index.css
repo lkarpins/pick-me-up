@@ -5,17 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #ffffff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-html,
-body {
-  color: #ffffff;
-  border: 2px solid #103783;
-}
 h1,
 h2 {
   font-family: "Righteous", cursive;
@@ -27,8 +19,94 @@ button {
   cursor: pointer;
 }
 
+.view {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  align-content: stretch;
+}
+
+.flex-background {
+  display: flex;
+  padding: 2em;
+  min-height: calc(100vh - 11rem);
+  max-height: calc(100vh - 11rem);
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+.icon {
+  color: #ffffff;
+  font-size: 2.25rem;
+  filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
+  cursor: pointer;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
 .link-style {
   text-decoration: none;
-
   color: white;
+}
+
+.advice-section {
+  background: linear-gradient(0deg, #f27a7d, #f7d486, #c5f9d7);
+  background-size: 400% 400%;
+  -webkit-animation: GradientAnimation 15s ease infinite;
+  -moz-animation: GradientAnimation 15s ease infinite;
+  animation: GradientAnimation 15s ease infinite;
+}
+
+.compliment-section {
+  background: linear-gradient(0deg, #c5f9d7, #f7d486, #f27a7d);
+  background-size: 400% 400%;
+  -webkit-animation: GradientAnimation 15s ease infinite;
+  -moz-animation: GradientAnimation 15s ease infinite;
+  animation: GradientAnimation 15s ease infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .view {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes GradientAnimation {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+@-moz-keyframes GradientAnimation {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+@keyframes GradientAnimation {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
 }

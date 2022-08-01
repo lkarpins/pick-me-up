@@ -1,0 +1,44 @@
+.selection-topbar {
+  position: absolute;
+  top: 8rem;
+  right: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.topbar-btn {
+  border: none;
+  cursor: pointer;
+  height: 3rem;
+  width: 3rem;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selection-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selection-view-text {
+  filter: drop-shadow(0 0 0.75rem rgba(16, 55, 131, 0.5));
+  letter-spacing: 0.1rem;
+  font-size: 3rem;
+  text-align: center;
+  max-width: 39rem;
+}
+
+.selection-view-text::first-letter {
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+  .selection-view {
+    width: 100%;
+    min-height: 100vh;
+  }
+}

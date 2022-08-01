@@ -1,17 +1,15 @@
 import * as React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "../Button/Button";
+import { Button } from "../../components/Button/Button";
+import { HasGetNewCall, HasSelection, HasToggleFavorites } from "../../types";
 import "./SelectionView.css";
 
-export interface SelectionViewProps {
-  selection: string;
+export interface SelectionViewProps
+  extends HasSelection,
+    HasGetNewCall,
+    HasToggleFavorites {
   selectionViewText: string;
-  getNewCall: (selection: string) => void;
-  toggleFavorites: (
-    selection: string,
-    favoriteSelection: string
-  ) => boolean | undefined;
 }
 
 export const SelectionView = ({
@@ -32,7 +30,7 @@ export const SelectionView = ({
   };
 
   return (
-    <div className={`selection-view ${selection}-background`}>
+    <div className={`flex-background ${selection}-section`}>
       <div className="selection-topbar">
         <div
           className="topbar-btn"

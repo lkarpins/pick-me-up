@@ -7,3 +7,7 @@
   width: 13rem;
   text-transform: uppercase;
 }
+
+.app-button:hover {
+  transform: scale(1.1);
+}

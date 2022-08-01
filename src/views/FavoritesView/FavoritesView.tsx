@@ -1,20 +1,18 @@
 import * as React from "react";
-import "./FavoritesView.css";
-import { FavoritesContainer } from "../FavoritesContainer/FavoritesContainer";
+import { FavoritesContainer } from "../../components/FavoritesContainer/FavoritesContainer";
+import { HasFavoritesArrays, HasToggleFavorites } from "../../types";
 
-export interface FavoritesViewProps {
-  toggleFavorites: (selection: string, favoriteSelection: string) => void;
-  favoriteCompliment: string[];
-  favoriteAdvice: string[];
-}
+export interface FavoritesViewProps
+  extends HasToggleFavorites,
+    HasFavoritesArrays {}
 
-export function FavoritesView({
+export const FavoritesView = ({
   favoriteCompliment,
   favoriteAdvice,
   toggleFavorites,
-}: FavoritesViewProps) {
+}: FavoritesViewProps) => {
   return (
-    <div className="favorites-view">
+    <div className="view">
       <FavoritesContainer
         selection="compliment"
         selectionHeading="Favorite Compliments"
@@ -29,4 +27,4 @@ export function FavoritesView({
       />
     </div>
   );
-}
+};
