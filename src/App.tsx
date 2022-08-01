@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { getCompliments, getAdvice } from "./utilities/apiCalls";
+import { getCompliments, getAdvice } from "./utilities/ApiCalls";
 import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
 import { useLocalStorage } from "./utilities/useLocalStorage";
-import { execute, executeAsync } from "./utilities/exceptionHandlers";
+import { executeAsync } from "./utilities/exceptionHandlers";
 import { ErrorView } from "./components/ErrorView/ErrorView";
 import { ErrorBoundary } from "react-error-boundary";
 
@@ -42,29 +42,37 @@ const App = () => {
     }
   };
 
+  const toggleCompliment = (favoriteSelection: string) => {
+    if (!favoriteCompliment.includes(favoriteSelection)) {
+      setFavoriteCompliment([...favoriteCompliment, favoriteSelection]);
+      return true;
+    } else {
+      const filteredFavorites = favoriteCompliment.filter(
+        (compliment: string) => compliment !== favoriteSelection
+      );
+      setFavoriteCompliment(filteredFavorites);
+      return false;
+    }
+  };
+
+  const toggleAdvice = (favoriteSelection: string) => {
+    if (!favoriteAdvice.includes(favoriteSelection)) {
+      setFavoriteAdvice([...favoriteAdvice, favoriteSelection]);
+      return true;
+    } else {
+      const filteredFavorites = favoriteAdvice.filter(
+        (advice: string) => advice !== favoriteSelection
+      );
+      setFavoriteAdvice(filteredFavorites);
+      return false;
+    }
+  };
+
   const toggleFavorites = (selection: string, favoriteSelection: string) => {
     if (selection === "compliment") {
-      if (!favoriteCompliment.includes(favoriteSelection)) {
-        setFavoriteCompliment([...favoriteCompliment, favoriteSelection]);
-        return true;
-      } else {
-        const filteredFavorites = favoriteCompliment.filter(
-          (compliment: string) => compliment !== favoriteSelection
-        );
-        setFavoriteCompliment(filteredFavorites);
-        return false;
-      }
+      return toggleCompliment(favoriteSelection);
     } else if (selection === "advice") {
-      if (!favoriteAdvice.includes(favoriteSelection)) {
-        setFavoriteAdvice([...favoriteAdvice, favoriteSelection]);
-        return true;
-      } else {
-        const filteredFavorites = favoriteAdvice.filter(
-          (advice: string) => advice !== favoriteSelection
-        );
-        setFavoriteAdvice(filteredFavorites);
-        return false;
-      }
+      return toggleAdvice(favoriteSelection);
     }
   };
   return (
