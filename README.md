@@ -13,6 +13,8 @@
 
 ## Learning Goals
 
+## Illustrations
+
 ## Technologies and Tools
 
 - JavaScript
