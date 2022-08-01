@@ -1,0 +1,17 @@
+.error-view {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: #f27a7d;
+  height: 100vh;
+}
+
+.error-heading {
+  font-size: 5rem;
+  margin-bottom: 0;
+}
+
+.error-message {
+  font-size: 2.5rem;
+}

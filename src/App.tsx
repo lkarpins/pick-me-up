@@ -3,8 +3,11 @@ import { getCompliments, getAdvice } from "./ApiCalls";
 import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
 import { useLocalStorage } from "./utilities/useLocalStorage";
+import { execute, executeAsync } from "./utilities/exceptionHandlers";
+import { ErrorView } from "./components/ErrorView/ErrorView";
+import { ErrorBoundary } from "react-error-boundary";
 
-export const App = () => {
+const App = () => {
   const [compliment, setCompliment] = useState("");
   const [advice, setAdvice] = useState("");
   const [favoriteCompliment, setFavoriteCompliment] = useLocalStorage(
@@ -15,26 +18,27 @@ export const App = () => {
     "adviceFavorite",
     []
   );
+  const [error, setError] = useState(new Error());
 
   useEffect(() => {
-    getCompliments().then((json) => {
-      setCompliment(json.compliment);
-    });
-    getAdvice().then((json) => {
-      setAdvice(json.slip.advice);
-    });
+    getNewCall("compliment");
+    getNewCall("advice");
   }, []);
 
   const getNewCall = async (selection: string) => {
     if (selection === "compliment") {
-      await getCompliments().then((json) => {
-        setCompliment(json.compliment);
-      });
+      const [res, err] = await executeAsync(getCompliments);
+      if (err) {
+        return setError(err);
+      }
+      setCompliment(res.compliment);
     }
     if (selection === "advice") {
-      await getAdvice().then((json) => {
-        setAdvice(json.slip.advice);
-      });
+      const [res, err] = await executeAsync(getAdvice);
+      if (err) {
+        return setError(err);
+      }
+      setAdvice(res.slip.advice);
     }
   };
 
@@ -65,15 +69,18 @@ export const App = () => {
   };
   return (
     <main className="App">
-      <Navigation label="See Favorites" />
-      <Routes
-        getNewCall={getNewCall}
-        compliment={compliment}
-        advice={advice}
-        toggleFavorites={toggleFavorites}
-        favoriteCompliment={favoriteCompliment}
-        favoriteAdvice={favoriteAdvice}
-      />
+      <ErrorBoundary FallbackComponent={ErrorView}>
+        <Navigation label="See Favorites" />
+        <Routes
+          error={error}
+          getNewCall={getNewCall}
+          compliment={compliment}
+          advice={advice}
+          toggleFavorites={toggleFavorites}
+          favoriteCompliment={favoriteCompliment}
+          favoriteAdvice={favoriteAdvice}
+        />
+      </ErrorBoundary>
     </main>
   );
 };
