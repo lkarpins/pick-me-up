@@ -1,46 +1,66 @@
-# Getting Started with Create React App
+### PickMeUp
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Project Overview](#project-overview)
+- [Learning Goals](#learning-goals)
+- [Technologies and Tools](#technologies-and-tools)
+- [Roadmap](#roadmap)
+- [Setup](#setup)
+- [Contributors](#contributors)
 
-In the project directory, you can run:
+## Project Overview
 
-### `npm start`
+## Learning Goals
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Illustrations
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Technologies and Tools
 
-### `npm test`
+- JavaScript
+- TypeScript
+- React
+- React Router
+- HTML
+- CSS
+- Cypress
+- Mocha
+- Chai
+- Fetch API
+- NPM
+- Webpack
+- Heroku
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Roadmap
 
-### `npm run build`
+Future features could include:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Add functionality to allow a users to add/post personalized compliments or advice
+- Add feature to connect with other users and send compliments or advice
+- Include images or music to enhance user experience
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Fork and clone this repository
+2. Cd into the root directory and run `npm i`
+3. To run this server, run `npm start` in the terminal and React will start the development server. To stop the local server, use command `Control + C`.
+4. Open a browser window and go to http://localhost:3000 to view the website
 
-### `npm run eject`
+## Deployable Link
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contributors
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Rachel Allen**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [LinkedIn](https://www.linkedin.com/in/rachel-lynn-allen/)
+- [GitHub](https://github.com/Rallen13)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Lourdes Benites**
 
-## Learn More
+- [LinkedIn](https://www.linkedin.com/in/lourdesbenites/)
+- [GitHub](https://github.com/lourdesbnts)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Lidia Karpinski**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [LinkedIn](https://www.linkedin.com/in/lidia-karpinski/)
+- [GitHub](https://github.com/lkarpins)
