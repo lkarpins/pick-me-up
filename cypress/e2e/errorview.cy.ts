@@ -8,25 +8,18 @@ describe('Error View', () => {
       .dataCy("error-heading")
       .contains("Something went wrong!")
   })
-});
 
-//   it("Should display error page for 404 status code", () => {
-//     cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-//       statusCode: 404
-//     })
-//     cy.visit('http://localhost:3000')
-//       .get('.error-header')
-//       .contains('Oops!')
-//   })
-//   it("Should display error page for 400 status code", () => {
-//     cy.intercept('https://rancid-tomatillos.herokuapp.com/api/v2/movies', {
-//       statusCode: 400
-//     })
-//     cy.visit('http://localhost:3000')
-//       .get('.error-header')
-//       .contains('Oops!')
-//   })
-// });
+  it('Should display error message when there is a server error', () => {
+    cy.intercept(
+      'GET', 
+      "https://complimentr.com/api", 
+      { forceNetworkError: true }
+    ).as('getNetworkFailure')
+      cy.visit('http://localhost:3000/error')
+      cy.wait('@getNetworkFailure')
+      .dataCy("error-heading").contains("Something went wrong!")
+  })
+});
 
 
 
