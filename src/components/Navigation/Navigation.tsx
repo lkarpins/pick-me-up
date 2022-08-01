@@ -3,11 +3,7 @@ import { Button } from "../Button/Button";
 import { Link, useLocation } from "react-router-dom";
 import "./Navigation.css";
 
-export interface NavigationProps {
-  label: string;
-}
-
-export const Navigation = ({ label }: NavigationProps) => {
+export const Navigation = () => {
   const location = useLocation();
 
   return (

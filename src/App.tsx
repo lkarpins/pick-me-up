@@ -80,7 +80,6 @@ const App = () => {
       <ErrorBoundary FallbackComponent={ErrorView}>
         <Navigation label="See Favorites" />
         <Routes
-          error={error}
           getNewCall={getNewCall}
           compliment={compliment}
           advice={advice}

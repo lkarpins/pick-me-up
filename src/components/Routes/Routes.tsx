@@ -4,22 +4,21 @@ import { SelectionView } from "../../views/SelectionView/SelectionView";
 import { HomeView } from "../../views/HomeView/HomeView";
 import { FavoritesView } from "../../views/FavoritesView/FavoritesView";
 import { ErrorView } from "../../views/ErrorView/ErrorView";
+import {
+  HasFavoritesArrays,
+  HasGetNewCall,
+  HasToggleFavorites,
+} from "../../types";
 
-export interface RoutesProps {
-  error: Error;
+export interface RoutesProps
+  extends HasToggleFavorites,
+    HasGetNewCall,
+    HasFavoritesArrays {
   compliment: string;
   advice: string;
-  getNewCall: (selection: string) => void;
-  toggleFavorites: (
-    selection: string,
-    favoriteSelection: string
-  ) => boolean | undefined;
-  favoriteCompliment: string[];
-  favoriteAdvice: string[];
 }
 
 export const Routes = ({
-  error,
   compliment,
   advice,
   getNewCall,

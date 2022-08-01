@@ -1,14 +1,13 @@
 import React from "react";
+import { HasSelection, HasToggleFavorites } from "../../types";
 import "./FavoritesContainer.css";
 
-export interface FavoritesContainerProps {
-  selection: string;
+export interface FavoritesContainerProps
+  extends HasSelection,
+    HasToggleFavorites {
   selectionHeading: string;
   favoriteSelection: string[];
-  toggleFavorites: (selection: string, favoriteSelection: string) => void;
 }
-
-
 
 export const FavoritesContainer = ({
   selection,
@@ -32,6 +31,7 @@ export const FavoritesContainer = ({
       );
     }
   );
+
   return (
     <div
       className={`favorites ${selection}-section`}
