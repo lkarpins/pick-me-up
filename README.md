@@ -33,6 +33,10 @@
 
 Future features could include:
 
+- Add functionality to allow a users to add/post personalized compliments or advice
+- Add feature to connect with other users and send compliments or advice
+- Include images or music to enhance user experience
+
 ## Setup
 
 1. Fork and clone this repository
