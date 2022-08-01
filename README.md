@@ -13,6 +13,19 @@
 
 ## Learning Goals
 
+- Continue to gain competency with React Fundamentals
+- Create a multi-page UX using Router
+- Practice refactoring
+- Continue to learn how to test React components & asynchronous JS
+- End to end testing with Cypress
+
+Our application includes the following core functionality:
+
+- Displays the data from the API in a way that applies directly to our audience
+- Ability for users to store/manipulate the data displayed in the application, such as favoriting and un-favoriting and storing favorites in Local Storage
+- Multiple views handled by Router
+- App deployment using Heroku
+
 ## Illustrations
 
 - [Functionality Video](https://vimeo.com/735533177)
