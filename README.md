@@ -6,3 +6,7 @@
 - [Roadmap](#roadmap)
 - [Setup](#setup)
 - [Contributors](#contributors)
+
+## Project Overview
+
+## Learning Goals
