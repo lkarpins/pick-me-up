@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getCompliments, getAdvice } from "./ApiCalls";
+import { getCompliments, getAdvice } from "./utilities/apiCalls";
 import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
 import { useLocalStorage } from "./utilities/useLocalStorage";

@@ -8,6 +8,8 @@ export interface FavoritesContainerProps {
   toggleFavorites: (selection: string, favoriteSelection: string) => void;
 }
 
+
+
 export const FavoritesContainer = ({
   selection,
   selectionHeading,
