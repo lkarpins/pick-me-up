@@ -1,4 +1,4 @@
-describe('Error View', () => {
+describe("Error View Compliment", () => {
   it("Should display error for a broken URL", () => {
     cy.intercept("http://localhost:3000/")
       cy.visit("http://localhost:3000/compliment")
@@ -18,6 +18,29 @@ describe('Error View', () => {
       cy.visit('http://localhost:3000/error')
       cy.wait('@getNetworkFailure')
       .dataCy("error-heading").contains("Something went wrong!")
+  })
+
+  describe("Error View Advice", () => {
+    it("Should display error for a broken URL", () => {
+      cy.intercept("http://localhost:3000/")
+        cy.visit("http://localhost:3000/advice")
+        .dataCy("app-button").contains("Get New advice").click()
+        .intercept("https://api.adviceslip.com/advice")
+        .visit("http://localhost:3000/advices")
+        .dataCy("error-heading")
+        .contains("Something went wrong!")
+    })
+  
+    it('Should display error message when there is a server error', () => {
+      cy.intercept(
+        'GET', 
+        "https://api.adviceslip.com/advice", 
+        { forceNetworkError: true }
+      ).as('getNetworkFailure')
+        cy.visit('http://localhost:3000/error')
+        cy.wait('@getNetworkFailure')
+        .dataCy("error-heading").contains("Something went wrong!")
+    })
   })
 });
 
