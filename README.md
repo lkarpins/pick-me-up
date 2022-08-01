@@ -1,5 +1,4 @@
-![Screen Shot 2022-08-01 at 3 26 21 PM](https://user-images.githubusercontent.com/99596577/182251505-32a2cd8f-b232-4e87-a284-1b12c0dcb795.png)
-
+### PickMeUp
 
 ## Table of Contents
 
@@ -15,6 +14,8 @@
 ## Learning Goals
 
 ## Illustrations
+
+- [Functionality Video](https://vimeo.com/735533177)
 
 ## Technologies and Tools
 
