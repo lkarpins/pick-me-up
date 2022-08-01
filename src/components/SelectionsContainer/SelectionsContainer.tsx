@@ -20,7 +20,7 @@ export const SelectionsContainer = ({
         {selectionHeading}
       </h2>
       <Link to={`/${selection}`}>
-        <Button label={buttonLabel} />
+        <Button label={buttonLabel} data-cy="app-button" />
       </Link>
     </div>
   );
