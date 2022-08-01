@@ -1,11 +1,8 @@
 import * as React from "react";
-import { Button } from "../Button/Button";
-import { SelectionsContainer } from "../SelectionsContainer/SelectionsContainer";
+import { SelectionsContainer } from "../../components/SelectionsContainer/SelectionsContainer";
 import "./HomeView.css";
 
-export interface HomeViewProps {}
-
-export function HomeView({}: HomeViewProps) {
+export function HomeView() {
   return (
     <div className="home-view">
       <SelectionsContainer

@@ -4,7 +4,7 @@ import { Navigation } from "./components/Navigation/Navigation";
 import { Routes } from "./components/Routes/Routes";
 import { useLocalStorage } from "./utilities/useLocalStorage";
 import { executeAsync } from "./utilities/exceptionHandlers";
-import { ErrorView } from "./components/ErrorView/ErrorView";
+import { ErrorView } from "./views/ErrorView/ErrorView";
 import { ErrorBoundary } from "react-error-boundary";
 
 const App = () => {

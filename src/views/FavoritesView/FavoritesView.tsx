@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./FavoritesView.css";
-import { FavoritesContainer } from "../FavoritesContainer/FavoritesContainer";
+import { FavoritesContainer } from "../../components/FavoritesContainer/FavoritesContainer";
 
 export interface FavoritesViewProps {
   toggleFavorites: (selection: string, favoriteSelection: string) => void;

@@ -1,9 +1,9 @@
 import * as React from "react";
 import { Route, Switch } from "react-router-dom";
-import { SelectionView } from "../SelectionView/SelectionView";
-import { HomeView } from "../HomeView/HomeView";
-import { FavoritesView } from "../FavoritesView/FavoritesView";
-import { ErrorView } from "../ErrorView/ErrorView";
+import { SelectionView } from "../../views/SelectionView/SelectionView";
+import { HomeView } from "../../views/HomeView/HomeView";
+import { FavoritesView } from "../../views/FavoritesView/FavoritesView";
+import { ErrorView } from "../../views/ErrorView/ErrorView";
 
 export interface RoutesProps {
   error: Error;
