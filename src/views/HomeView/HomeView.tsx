@@ -1,10 +1,9 @@
 import * as React from "react";
 import { SelectionsContainer } from "../../components/SelectionsContainer/SelectionsContainer";
-import "./HomeView.css";
 
 export function HomeView() {
   return (
-    <div className="home-view">
+    <div className="view">
       <SelectionsContainer
         selection="compliment"
         selectionHeading="Are you looking for a confidence boost?"

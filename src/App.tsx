@@ -78,7 +78,7 @@ const App = () => {
   return (
     <main className="App">
       <ErrorBoundary FallbackComponent={ErrorView}>
-        <Navigation label="See Favorites" />
+        <Navigation />
         <Routes
           getNewCall={getNewCall}
           compliment={compliment}

@@ -1,5 +1,4 @@
 import * as React from "react";
-import "./FavoritesView.css";
 import { FavoritesContainer } from "../../components/FavoritesContainer/FavoritesContainer";
 import { HasFavoritesArrays, HasToggleFavorites } from "../../types";
 
@@ -13,7 +12,7 @@ export const FavoritesView = ({
   toggleFavorites,
 }: FavoritesViewProps) => {
   return (
-    <div className="favorites-view">
+    <div className="view">
       <FavoritesContainer
         selection="compliment"
         selectionHeading="Favorite Compliments"

@@ -15,7 +15,7 @@ export const SelectionsContainer = ({
   buttonLabel,
 }: SelectionsContainerProps) => {
   return (
-    <div className={`selections ${selection}-section`}>
+    <div className={`flex-background selections ${selection}-section`}>
       <h2 className="selection-heading" data-cy="selection-heading">
         {selectionHeading}
       </h2>

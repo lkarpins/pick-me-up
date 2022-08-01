@@ -30,7 +30,7 @@ export const SelectionView = ({
   };
 
   return (
-    <div className={`selection-view ${selection}-background`}>
+    <div className={`flex-background ${selection}-section`}>
       <div className="selection-topbar">
         <div
           className="topbar-btn"
