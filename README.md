@@ -46,6 +46,8 @@ Future features could include:
 3. To run this server, run `npm start` in the terminal and React will start the development server. To stop the local server, use command `Control + C`.
 4. Open a browser window and go to http://localhost:3000 to view the website
 
+## Deployable
+
 ## Contributors
 
 **Rachel Allen**
