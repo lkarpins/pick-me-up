@@ -32,10 +32,11 @@ export const SelectionView = ({
   return (
     <div className={`flex-background ${selection}-section`}>
       <div className="selection-topbar">
-        <div 
+        <div
           className="topbar-btn"
           onClick={() => onFavoriteClick(selection, selectionViewText)}
-          tabIndex={0} 
+          tabIndex={0}
+          aria-label="favorite button"
         >
           {isFavorite ? (
             <span className="material-icons icon" data-cy="unfavorite-icon">
@@ -58,7 +59,7 @@ export const SelectionView = ({
         </Link>
       </div>
       <div className="selection-content">
-        <h2 className="selection-view-text" data-cy="selection-view-text">
+        <h2 className="selection-view-text" data-cy="selection-view-text" tabIndex={0}>
           {selectionViewText}
         </h2>
         <Button

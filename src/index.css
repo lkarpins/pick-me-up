@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -30,11 +34,10 @@ button {
 .flex-background {
   display: flex;
   padding: 2em;
-  min-height: calc(100vh - 11rem);
+  min-height: calc(100vh - 5rem);
   max-height: calc(100vh - 11rem);
   flex-direction: column;
   align-items: center;
-  align-content: center;
   justify-content: center;
 }
 
@@ -73,7 +76,6 @@ button {
 @media screen and (max-width: 768px) {
   .view {
     flex-direction: column;
-    width: 100%;
   }
 }
 

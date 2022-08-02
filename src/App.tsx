@@ -18,7 +18,7 @@ const App = () => {
     "adviceFavorite",
     []
   );
-  const [error, setError] = useState(new Error());
+  const [error, setError] = useState();
 
   useEffect(() => {
     getNewCall("compliment");
@@ -75,6 +75,16 @@ const App = () => {
       return toggleAdvice(favoriteSelection);
     }
   };
+
+  if (error) {
+    return (
+      <>
+        <Navigation />
+        <ErrorView error={error} />
+      </>
+    );
+  }
+
   return (
     <main className="App">
       <ErrorBoundary FallbackComponent={ErrorView}>

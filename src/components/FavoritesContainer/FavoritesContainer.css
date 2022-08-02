@@ -7,6 +7,8 @@
   flex: 1;
   background-color: #ffffff;
   color: #103783;
+  max-width: 100%;
+  max-height: calc(100vh - 10rem);
   padding: 2rem;
   min-width: -webkit-fill-available;
   border-radius: 1rem;
@@ -49,13 +51,11 @@
   cursor: pointer;
 }
 
-
-
 @media screen and (max-width: 768px) {
   .favorites {
     width: 100%;
-    /* min-height: 200px; */
+  }
+  .favorites-heading {
+    max-width: 100%;
   }
 }
-
-

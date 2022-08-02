@@ -15,8 +15,8 @@ export const SelectionsContainer = ({
   buttonLabel,
 }: SelectionsContainerProps) => {
   return (
-    <div className={`flex-background selections ${selection}-section`}>
-      <h2 className="selection-heading" data-cy="selection-heading">
+    <div className={`flex-background selections ${selection}-section`} >
+      <h2 className="selection-heading" data-cy="selection-heading" tabIndex={0}>
         {selectionHeading}
       </h2>
       <Link to={`/${selection}`}>

@@ -1,31 +1,29 @@
 nav {
-    background-color: #103783;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-flow: row wrap;
-    padding: 1rem 2rem;
-    height: 5rem;
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: auto;
-    z-index: 2
+  background-color: #103783;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: row nowrap;
+  padding: 1rem 2rem;
+  height: 5rem;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.logo {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    justify-content: center;
+    flex-flow: column nowrap;
+    height: auto;
+    padding: 1.5rem 2rem;
   }
   .logo {
-    font-size: 2.5rem;
-    margin: 0;
+    padding-bottom: 2rem;
   }
-
-  @media screen and (max-width: 768px) {
-    nav {
-      width: 100%;
-      justify-content: center;
-      flex-direction: column;
-      height: auto;
-      padding: 1.5rem 2rem;
-    }
-    .logo {
-      padding-bottom: 2rem;
-    }
-  }
+}
