@@ -23,30 +23,38 @@ export const FavoritesContainer = ({
             className="material-icons icon favorite-view-heart"
             data-cy="favorite-icon"
             onClick={() => toggleFavorites(selection, favSelection)}
+            tabIndex={0}
+            aria-label="favorite button"
           >
             favorite
           </span>
-          <p className="favorite-text with-heart">{favSelection}</p>
+          <p className="favorite-text with-heart" tabIndex={0}>
+            {favSelection}
+          </p>
         </div>
       );
     }
   );
 
   return (
-      <div
-        className={`flex-background favorites ${selection}-section`}
-        data-cy={`${selection}-section`}
-      >
-        <div className="favorites-card">
-          <h2 className="favorites-heading">{selectionHeading}</h2>
-          <div className="favorites-content">
-            {favoriteSelection.length > 0 ? (
-              favoritesContent
-            ) : (
-              <p className="favorite-text">No Favorites Saved</p>
-            )}
-          </div>
+    <div
+      className={`flex-background favorites ${selection}-section`}
+      data-cy={`${selection}-section`}
+    >
+      <div className="favorites-card">
+        <h2 className="favorites-heading" tabIndex={0}>
+          {selectionHeading}
+        </h2>
+        <div className="favorites-content">
+          {favoriteSelection.length > 0 ? (
+            favoritesContent
+          ) : (
+            <p className="favorite-text" tabIndex={0}>
+              No Favorites Saved
+            </p>
+          )}
         </div>
       </div>
+    </div>
   );
 };

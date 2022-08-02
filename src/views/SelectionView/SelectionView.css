@@ -1,7 +1,7 @@
 .selection-topbar {
   position: absolute;
-  top: 8rem;
-  right: 1rem;
+  top: 7rem;
+  right: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,12 +10,7 @@
 .topbar-btn {
   border: none;
   cursor: pointer;
-  height: 3rem;
-  width: 3rem;
   background-color: transparent;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .selection-content {
@@ -37,8 +32,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .selection-view {
-    width: 100%;
-    min-height: 100vh;
+  .selection-topbar {
+    position: fixed;
+    top: 12rem;
+  }
+
+  .selection-view-text {
+    width: 18.5rem;
+    max-width: 100%;
   }
 }

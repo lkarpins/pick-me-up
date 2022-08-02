@@ -12,7 +12,7 @@ export interface HasGetNewCall {
 }
 
 export interface HasSelection {
-  selection: string
+  selection: string;
 }
 
 export interface HasFavoritesArrays {

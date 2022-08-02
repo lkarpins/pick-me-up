@@ -6,8 +6,10 @@ export interface ErrorViewProps {
 }
 
 export const ErrorView = ({ error }: ErrorViewProps) => (
-  <div role="alert" className="error-view" >
-    <h2 className="error-heading" data-cy="error-heading">Something went wrong!</h2>
+  <div role="alert" className="error-view">
+    <h2 className="error-heading" data-cy="error-heading">
+      Something went wrong!
+    </h2>
     <p className="error-message">{error.message}</p>
     <img
       className="error-image"
