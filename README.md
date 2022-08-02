@@ -15,18 +15,19 @@
 Everyone has bad days…PickMeUp is an application that provides an uplifting compliment and/or a solid piece of advice to put a smile on your face! Users have the opportunity to browse through a variety of compliments/advice as well as favorite their most liked! 
 
 The stretch technology we chose as a group was TypeScript. TypeScript is an increasingly popular programming language and many employers are seeking TypeScript experience. The key augmentation TypeScript brings to JavaScript is a type system (hence the name “TypeScript”). Below are just a few benefits of using TypeScript in React:
+
 - Readable, easily understandable code
 - Interfaces
 - Better support for JSX
 - Easier debugging while writing code
 
-Throughout this project, we took full advantage of React’s modular nature by creating dynamically rendered components and views. This helped us keep the app small yet provided the user with a pleasant experience. We implemented thoughtful architecture through the use of shared utilities, global extendable interfaces, and views. We implemented Local Storage to store our favorite compliments and pieces of advice.We styled the app using shared classes that reduced the amount of repeated CSS throughout the app as well as applying media queries to make everything mobile responsive. We recognized the value of typescript while working through the functionality and feel confident in the product we created.
+Throughout this project, we took full advantage of React’s modular nature by creating dynamically rendered components and views. This helped us keep the app small yet provided the user with a pleasant experience. We implemented thoughtful architecture through the use of shared utilities, global extendable interfaces, and views. We implemented Local Storage to store our favorite compliments and pieces of advice. We styled the app using shared classes that reduced the amount of repeated CSS throughout the app as well as applying media queries to make everything mobile responsive. We recognized the value of typescript while working through the functionality and feel confident in the product we created.
 
 ## Learning Goals
 
 - Continue to gain competency with React Fundamentals
 - Create a multi-page UX using Router
-- Practice refactoring
+- Practice refactoring class based components to use react hooks
 - Continue to learn how to test React components & asynchronous JS
 - End to end testing with Cypress
 
@@ -79,6 +80,7 @@ Future features could include:
 2. Cd into the root directory and run `npm i`
 3. To run this server, run `npm start` in the terminal and React will start the development server. To stop the local server, use command `Control + C`.
 4. Open a browser window and go to http://localhost:3000 to view the website
+5. To run the testing suite, run `npm run cypress` and Cypress will open up.
 
 
 ## Contributors
