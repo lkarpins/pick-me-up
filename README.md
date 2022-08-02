@@ -20,7 +20,7 @@ The stretch technology we chose as a group was TypeScript. TypeScript is an incr
 - Better support for JSX
 - Easier debugging while writing code
 
-Throughout this project, we took full advantage of React’s modular nature by creating dynamically rendered components and views. This helped us keep the app small yet provided the user with a pleasant experience. We implemented thoughtful architecture through the use of shared utilities, global extendable interfaces, and views. We styled the app using shared classes that reduced the amount of repeated CSS throughout the app as well as applying media queries to make everything mobile responsive. We recognized the value of typescript while working through the functionality and feel confident in the product we created.
+Throughout this project, we took full advantage of React’s modular nature by creating dynamically rendered components and views. This helped us keep the app small yet provided the user with a pleasant experience. We implemented thoughtful architecture through the use of shared utilities, global extendable interfaces, and views. We implemented Local Storage to store our favorite compliments and pieces of advice.We styled the app using shared classes that reduced the amount of repeated CSS throughout the app as well as applying media queries to make everything mobile responsive. We recognized the value of typescript while working through the functionality and feel confident in the product we created.
 
 ## Learning Goals
 
@@ -40,6 +40,7 @@ Our application includes the following core functionality:
 [MVP proposal](https://docs.google.com/document/d/1cGteY0e05Mdk73IE2YPPpdn99LgDzXrr-9utHpzVqGc/edit)
 
 [Wireframes](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9f801b93-758b-483b-9597-0902f3851f9a/Untitled_%282%29.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220802%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220802T003603Z&X-Amz-Expires=86400&X-Amz-Signature=a98a6e302f5d86b8a65a9cda346cbe830f48be0303381fffc57e9c0ab8f9e69d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled%2520%282%29.pdf%22&x-id=GetObject)
+
 [Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
 
 ## Illustrations
