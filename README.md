@@ -38,13 +38,15 @@ Our application includes the following core functionality:
 - App deployment using Heroku
 
 [MVP proposal](https://docs.google.com/document/d/1cGteY0e05Mdk73IE2YPPpdn99LgDzXrr-9utHpzVqGc/edit)
+
 [Wireframes](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9f801b93-758b-483b-9597-0902f3851f9a/Untitled_%282%29.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220802%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220802T003603Z&X-Amz-Expires=86400&X-Amz-Signature=a98a6e302f5d86b8a65a9cda346cbe830f48be0303381fffc57e9c0ab8f9e69d&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled%2520%282%29.pdf%22&x-id=GetObject)
 [Project Spec](https://frontend.turing.edu/projects/module-3/stretch.html)
 
 ## Illustrations
 
--[Deployed Link](https://pick-me-up11.herokuapp.com/)
+- [Deployed Link](https://pick-me-up11.herokuapp.com/)
 - [Functionality Video](https://vimeo.com/735533177)
+- [Responsiveness Video](https://www.loom.com/share/c5035e96b4894250b4b5a5e3d1c25b38)
 
 ## Technologies and Tools
 
@@ -70,7 +72,7 @@ Future features could include:
 - Add feature to connect with other users and send compliments or advice
 - Include images or music to enhance user experience
 
-## Setup
+## Setup to Run Locally
 
 1. Fork and clone this repository
 2. Cd into the root directory and run `npm i`
