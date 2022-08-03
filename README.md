@@ -49,7 +49,9 @@ Our application includes the following core functionality:
 ## Illustrations
 
 [Deployed Link](https://pick-me-up11.herokuapp.com/)
+
 [Functionality Video](https://vimeo.com/735533177)
+
 [Responsiveness Video](https://www.loom.com/share/c5035e96b4894250b4b5a5e3d1c25b38)
 
 ## Technologies and Tools
