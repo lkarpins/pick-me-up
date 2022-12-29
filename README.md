@@ -48,7 +48,7 @@ Our application includes the following core functionality:
 
 ## Illustrations
 
-[Deployed Link](https://pick-me-up11.herokuapp.com/)
+[Deployed Link](https://pick-me-up-ten.vercel.app/)
 
 [Functionality Video](https://vimeo.com/735533177)
 
